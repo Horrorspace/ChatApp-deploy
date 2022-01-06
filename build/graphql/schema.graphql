@@ -1,0 +1,79 @@
+scalar Date
+
+type User {
+    id: Int!
+    username: String!
+    email: String!
+    online: Boolean
+    avatarSrc: String
+    confirmed: Boolean
+}
+
+type Message {
+    id: Int
+    date: Date
+    text: String!
+    readed: Boolean
+    fromUserId: Int!
+    toUserId: Int!
+}
+
+input IdInput {
+    id: Int!
+}
+
+input IdsInput {
+    ids: [Int!]
+}
+
+input MessageInput {
+    toUserId: Int!
+    text: String!
+}
+
+input EditUserName {
+    id: Int!
+    username: String!
+}
+
+input EditUserEmail {
+    id: Int!
+    email: String!
+}
+
+input EditUserPassword {
+    id: Int!
+    password: String!
+}
+
+input EditUserOnline {
+    id: Int!
+    online: Boolean
+}
+
+input EditUserAvatar {
+    id: Int!
+    avatarSrc: String
+}
+
+type Query {
+    users: [User]
+    usersById(options: IdsInput): [User]
+    user(options: IdInput): User
+
+    messages: [Message]
+    message(options: IdInput): Message
+}
+
+type Mutation {
+    editUserName(options: EditUserName): User
+    editUserEmail(options: EditUserEmail): User
+    editUserPassword(options: EditUserPassword): User
+    editUserOnline(options: EditUserOnline): User
+    editUserAvatar(options: EditUserAvatar): User
+    editUserConfirm(options: IdInput): User
+    
+    createMessage(message: MessageInput): Message
+    setReadMessage(options: IdInput): Message
+    deleteMessage(options: IdInput): Message
+}
