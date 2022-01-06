@@ -42,6 +42,7 @@ let SessionsModule = class SessionsModule {
         });
     }
     configure(consumer) {
+        this.sessionStore.sync();
         consumer
             .apply((0, cookie_parser_1.default)(), (0, express_session_1.default)({
             secret: "cats and dogs",
