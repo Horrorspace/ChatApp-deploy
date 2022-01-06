@@ -21,11 +21,18 @@ let SessionsModule = class SessionsModule {
         this.SequelizeStore = (0, connect_session_sequelize_1.default)(express_session_1.default.Store);
         this.sequelize = new sequelize_1.Sequelize({
             dialect: 'postgres',
+            dialectOptions: {
+                ssl: {
+                    require: true,
+                    rejectUnauthorized: false
+                }
+            },
             host: process.env.POSTGRES_HOST,
             port: Number(process.env.POSTGRES_PORT),
             username: process.env.POSTGRES_USER,
             password: process.env.POSTGRES_PASSWORD,
             database: process.env.SESSION_DB,
+            ssl: true,
             logging: false
         });
         this.sessionStore = new this.SequelizeStore({

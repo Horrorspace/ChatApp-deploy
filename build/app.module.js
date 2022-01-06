@@ -56,8 +56,8 @@ AppModule = __decorate([
                 password: process.env.POSTGRES_PASSWORD,
                 database: process.env.CHAT_DB,
                 models: [users_model_1.User, messages_model_1.Message],
-                autoLoadModels: true,
                 ssl: true,
+                autoLoadModels: true,
                 logging: false
             }),
             graphql_1.GraphQLModule.forRoot({
