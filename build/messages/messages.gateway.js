@@ -66,8 +66,9 @@ let MessagesGateway = class MessagesGateway {
                     .sort((a, b) => a.date.getTime() - b.date.getTime())[index];
                 const fromSocket = this.getSocketId(id);
                 const toSocket = this.getSocketId(toUserId);
-                fromSocket ? this.server.to(fromSocket).emit('message', message) : null;
-                toSocket ? this.server.to(toSocket).emit('message', message) : null;
+                console.log(fromSocket, toSocket)
+                console.log(fromSocket ? this.server.to(fromSocket).emit('message', message) : null);
+                console.log(toSocket ? this.server.to(toSocket).emit('message', message) : null);
             }
             console.log(text, toUserId);
         });
