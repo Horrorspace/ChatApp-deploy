@@ -7,28 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --mode production",
-    "dev": "cross-env NODE_ENV=development webpack --mode development",
-    "ts": "tsc --watch --resolveJsonModule -p tsconfig.dev.json",
-    "serve": "cross-env NODE_ENV=development nodemon ./build/main.js",
-    "start": "cross-env NODE_ENV=production node ./build/main.js",
-    "ts-build": "tsc --resolveJsonModule -p tsconfig.build.json",
-    "dev-start": "cross-env NODE_ENV=development webpack serve --mode development --open",
-    "db-create": "cd sql psql -U postgres -W -f delete.sql",
-    "db-delete": "cd sql psql -U postgres -W -f delete.sql",
-    "prebuild": "rimraf dist",
-    "nest-build": "cross-env NODE_ENV=development nest start -p ./tsconfig.json -c ./nest-cli.json --tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start1": "cross-env NODE_ENV=development nest start -p ./tsconfig.json -c ./nest-cli.json --tsc",
-    "start:dev": "cross-env NODE_ENV=development nest start -p ./tsconfig.json -c ./nest-cli.json --tsc --watch",
-    "start:debug": "cross-env NODE_ENV=development nest start -p ./tsconfig.json -c ./nest-cli.json --tsc --debug --watch",
-    "start:prod": "node dist/main",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:cov": "jest --coverage",
-    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "start": "cross-env NODE_ENV=production node ./build/main.js"
   },
   "repository": {
     "type": "git",
