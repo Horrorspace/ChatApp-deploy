@@ -44,6 +44,9 @@ AppModule = __decorate([
             }),
             sequelize_1.SequelizeModule.forRoot({
                 dialect: 'postgres',
+                dialectOptions: {
+                    ssl: true
+                },
                 host: process.env.POSTGRES_HOST,
                 port: Number(process.env.POSTGRES_PORT),
                 username: process.env.POSTGRES_USER,
@@ -51,6 +54,7 @@ AppModule = __decorate([
                 database: process.env.CHAT_DB,
                 models: [users_model_1.User, messages_model_1.Message],
                 autoLoadModels: true,
+                ssl: true,
                 logging: false
             }),
             graphql_1.GraphQLModule.forRoot({
