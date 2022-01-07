@@ -46,7 +46,7 @@ let MessagesGateway = class MessagesGateway {
         }
     }
     getSocketId(id) {
-        const filteredArr = this.clients.filter(wsClient => wsClient.id === id);
+        const filteredArr = this.clients.filter(wsClient => wsClient.wsId === id);
         console.log(filteredArr, this.clients)
         if (filteredArr.length === 1) {
             return filteredArr[0].wsId;
