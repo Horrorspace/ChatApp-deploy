@@ -1,2 +1,3 @@
 import React from 'react';
-export declare const ProfileMenu: React.NamedExoticComponent<{}>;
+import { IProfileMenuProps } from '@interfaces/IProps';
+export declare const ProfileMenu: React.NamedExoticComponent<IProfileMenuProps>;

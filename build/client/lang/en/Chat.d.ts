@@ -1,5 +1,5 @@
 export declare enum Chat {
-    addUserPlaceholder = "Enter username or email",
+    addUserPlaceholder = "Enter user email",
     addUserTitle = "Add new user in contact list",
     alreadyAMember = "Already a memeber",
     avatarAlt = "User avatar",
@@ -11,6 +11,7 @@ export declare enum Chat {
     lastSeen = "Last seen",
     logout = "Log out",
     messagePlaceholder = "Message",
+    myProfile = "My profile",
     notAMember = "Not a member",
     now = "Now",
     searchPlaceholder = "Search",

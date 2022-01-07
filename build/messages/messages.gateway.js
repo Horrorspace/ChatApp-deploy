@@ -47,8 +47,7 @@ let MessagesGateway = class MessagesGateway {
     }
     getSocketId(id) {
         const filteredArr = this.clients.filter(wsClient => wsClient.id === id);
-        console.log(filteredArr, this.clients)
-        if (filteredArr.length === 1) {
+        if (filteredArr.length > 0) {
             return filteredArr[0].wsId;
         }
         else {
@@ -67,9 +66,8 @@ let MessagesGateway = class MessagesGateway {
                     .sort((a, b) => a.date.getTime() - b.date.getTime())[index];
                 const fromSocket = this.getSocketId(id);
                 const toSocket = this.getSocketId(toUserId);
-                console.log(fromSocket, toSocket)
-                console.log(fromSocket ? this.server.to(fromSocket).emit('message', message) : null);
-                console.log(toSocket ? this.server.to(toSocket).emit('message', message) : null);
+                fromSocket ? this.server.to(fromSocket).emit('message', message) : null;
+                toSocket ? this.server.to(toSocket).emit('message', message) : null;
             }
             console.log(text, toUserId);
         });

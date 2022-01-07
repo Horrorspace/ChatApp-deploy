@@ -83,11 +83,15 @@ export interface ISearchFieldProps {
     settingsModalShow: boolean;
     userInput: string;
     onSettingsBtnClick: btnClickHandler;
+    onMyProfileClick: clickHandlerVoid;
     onLogOutClick: clickHandlerVoid;
     onAddUserBtnClick: btnClickHandler;
     onAddUserCancel: clickHandler;
     onAddUserOk: btnClickHandler;
     onUserInputChange: inputChangeHandler;
+}
+export interface IProfileMenuProps {
+    onBackClick: clickHandlerVoid;
 }
 export interface IAvatarProps {
     src: string;
