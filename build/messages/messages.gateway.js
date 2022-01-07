@@ -70,8 +70,8 @@ let MessagesGateway = class MessagesGateway {
                 console.log(fromSocket, toSocket)
                 console.log(fromSocket ? this.server.to(fromSocket).emit('message', message) : null);
                 console.log(toSocket ? this.server.to(toSocket).emit('message', message) : null);
+                console.log(text, id, toUserId);
             }
-            console.log(text, toUserId);
         });
     }
     handleAuth({ access_token }, client) {
