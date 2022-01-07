@@ -46,7 +46,7 @@ let MessagesGateway = class MessagesGateway {
         }
     }
     getSocketId(id) {
-        const filteredArr = this.clients.filter(wsClient => wsClient.wsId === id);
+        const filteredArr = this.clients.filter(wsClient => wsClient.id === id);
         console.log(filteredArr, this.clients)
         if (filteredArr.length === 1) {
             return filteredArr[0].wsId;
@@ -59,6 +59,7 @@ let MessagesGateway = class MessagesGateway {
         return __awaiter(this, void 0, void 0, function* () {
             const id = this.getIdBySocket(client);
             if (id) {
+                console.log('id', id);
                 const newMessage = new create_message_dto_1.CreateMessageDto(id, toUserId, text);
                 yield this.messagesService.createMessage(newMessage);
                 const messages = yield this.messagesService.getUserMessages(toUserId);
