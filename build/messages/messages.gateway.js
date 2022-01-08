@@ -47,6 +47,10 @@ let MessagesGateway = class MessagesGateway {
     }
     getSocketId(id) {
         const filteredArr = this.clients.filter(wsClient => wsClient.id === id);
+<<<<<<< HEAD
+=======
+        console.log(filteredArr, this.clients)
+>>>>>>> 9704973063f2d268935a978de18f080192486534
         if (filteredArr.length > 0) {
             return filteredArr[0].wsId;
         }
@@ -58,6 +62,7 @@ let MessagesGateway = class MessagesGateway {
         return __awaiter(this, void 0, void 0, function* () {
             const id = this.getIdBySocket(client);
             if (id) {
+                console.log('id', id);
                 const newMessage = new create_message_dto_1.CreateMessageDto(id, toUserId, text);
                 yield this.messagesService.createMessage(newMessage);
                 const messages = yield this.messagesService.getUserMessages(toUserId);
@@ -66,10 +71,16 @@ let MessagesGateway = class MessagesGateway {
                     .sort((a, b) => a.date.getTime() - b.date.getTime())[index];
                 const fromSocket = this.getSocketId(id);
                 const toSocket = this.getSocketId(toUserId);
+<<<<<<< HEAD
                 fromSocket ? this.server.to(fromSocket).emit('message', message) : null;
                 toSocket ? this.server.to(toSocket).emit('message', message) : null;
+=======
+                console.log(fromSocket, toSocket)
+                console.log(fromSocket ? this.server.to(fromSocket).emit('message', message) : null);
+                console.log(toSocket ? this.server.to(toSocket).emit('message', message) : null);
+                console.log(text, id, toUserId);
+>>>>>>> 9704973063f2d268935a978de18f080192486534
             }
-            console.log(text, toUserId);
         });
     }
     handleAuth({ access_token }, client) {

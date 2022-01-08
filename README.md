@@ -36,43 +36,6 @@ This projects uses the following technologies:
 - [Socket.IO](https://socket.io/ "Socket.IO") - Realtime application framework based on WebSocket protocol and long-polling requests.
 - [JSON Web Token](https://jwt.io/ "JSON Web Token") - Open, industry standard RFC 7519 method for representing claims securely between two parties.
 
-## Folders structure
-
-* src
-  * client
-    * api
-    * assets
-      * fonts
-      * html
-      * img
-      * styles
-        * components
-    * config
-    * core
-      * classes
-      * const
-    * lang
-      * en
-      * ru
-    * store
-      * actions
-      * reducers
-      * saga
-      * types
-    * types
-      * aliases
-      * interfaces
-    * ui
-      * components
-      * HOCs
-      * hooks
-      * handlers
-      * pages
-    * utils
-  * server
-* test
-* shell
-* sql
 
 ## Development
 
